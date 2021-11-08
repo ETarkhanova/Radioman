@@ -57,6 +57,27 @@ class RadioTest {
     }
 
     @Test
+    public void shouldRadioStationTurnOnMinus10() {
+        Radio station = new Radio();
+        station.setCurrentRadioStation(-10);
+
+        int expected = 0;
+        int actual = station.getCurrentRadioStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldRadioStationTurnOnNext() {
+        Radio station = new Radio();
+        station.setCurrentRadioStation(8);
+        station.increaseRadioStation();
+
+        int expected = 9;
+        int actual = station.getCurrentRadioStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldRadioStationTurnOn10ByNext() {
         Radio station = new Radio();
         station.setCurrentRadioStation(9);
