@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
 
+    Radio station = new Radio(10);
+
     @Test
     public void shouldSetNumberOfRadioStations() {
         Radio station = new Radio();
@@ -67,9 +69,9 @@ class RadioTest {
     }
 
     @Test
-    public void shouldRadioStationTurnOn10() {
+    public void shouldRadioStationTurnOnLessStation() {
         Radio station = new Radio();
-        station.setCurrentRadioStation(10);
+        station.setCurrentRadioStation(-1);
 
         int expected = 9;
         int actual = station.getCurrentRadioStation();
@@ -77,9 +79,9 @@ class RadioTest {
     }
 
     @Test
-    public void shouldRadioStationTurnOnMinus10() {
+    public void shouldRadioStationTurnOn10() {
         Radio station = new Radio();
-        station.setCurrentRadioStation(-10);
+        station.setCurrentRadioStation(10);
 
         int expected = 0;
         int actual = station.getCurrentRadioStation();
